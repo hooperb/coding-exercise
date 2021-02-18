@@ -64,14 +64,13 @@ export const AnalyseHypertensionData = (input) => {
  * @returns {string} - Returns the HyperTension classification for the given SysBP and DiaBP fields
  */
 function calculateHyperTensionClassification(SysBP, DiaBP) {
-	switch(true){
-		case SysBP >= 180 && DiaBP >= 120 :
-			return "Stage 3";
-		case 180 > SysBP >= 160 || 110 > DiaBP >= 100 :
-			return "Stage 2";
-		case 160 > SysBP >= 140 || 100 > DiaBP >= 90 :
-			return "Stage 1";
-		default :
-			return "No Hypertension";
+	if((SysBP >= 180) && (DiaBP >= 120)) {
+		return "Stage 3";
+	} else if (((180 > SysBP) && (SysBP >= 160)) && ((110 > DiaBP) && (DiaBP >= 100))) {
+		return "Stage 2";
+	} else if (((160 > SysBP) && (SysBP  >= 140)) && ((100 > DiaBP) && (DiaBP >= 90))) {
+		return "Stage 1";
+	} else {
+		return "No Hypertension";
 	}
 }
