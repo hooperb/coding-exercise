@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/coding-exercise/static/css/main.64027e7e.chunk.css",
-    "main.js": "/coding-exercise/static/js/main.fada3970.chunk.js",
-    "main.js.map": "/coding-exercise/static/js/main.fada3970.chunk.js.map",
-    "runtime-main.js": "/coding-exercise/static/js/runtime-main.c1043db4.js",
-    "runtime-main.js.map": "/coding-exercise/static/js/runtime-main.c1043db4.js.map",
-    "static/js/2.825a3b6d.chunk.js": "/coding-exercise/static/js/2.825a3b6d.chunk.js",
-    "static/js/2.825a3b6d.chunk.js.map": "/coding-exercise/static/js/2.825a3b6d.chunk.js.map",
+    "main.css": "/coding-exercise/static/css/main.afc8e760.chunk.css",
+    "main.js": "/coding-exercise/static/js/main.c9e7bd6c.chunk.js",
+    "main.js.map": "/coding-exercise/static/js/main.c9e7bd6c.chunk.js.map",
+    "runtime-main.js": "/coding-exercise/static/js/runtime-main.d9d93b76.js",
+    "runtime-main.js.map": "/coding-exercise/static/js/runtime-main.d9d93b76.js.map",
+    "static/js/2.73126461.chunk.js": "/coding-exercise/static/js/2.73126461.chunk.js",
+    "static/js/2.73126461.chunk.js.map": "/coding-exercise/static/js/2.73126461.chunk.js.map",
     "index.html": "/coding-exercise/index.html",
-    "static/css/main.64027e7e.chunk.css.map": "/coding-exercise/static/css/main.64027e7e.chunk.css.map",
-    "static/js/2.825a3b6d.chunk.js.LICENSE.txt": "/coding-exercise/static/js/2.825a3b6d.chunk.js.LICENSE.txt"
+    "static/css/main.afc8e760.chunk.css.map": "/coding-exercise/static/css/main.afc8e760.chunk.css.map",
+    "static/js/2.73126461.chunk.js.LICENSE.txt": "/coding-exercise/static/js/2.73126461.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c1043db4.js",
-    "static/js/2.825a3b6d.chunk.js",
-    "static/css/main.64027e7e.chunk.css",
-    "static/js/main.fada3970.chunk.js"
+    "static/js/runtime-main.d9d93b76.js",
+    "static/js/2.73126461.chunk.js",
+    "static/css/main.afc8e760.chunk.css",
+    "static/js/main.c9e7bd6c.chunk.js"
   ]
 }
