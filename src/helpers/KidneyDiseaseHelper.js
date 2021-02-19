@@ -1,5 +1,7 @@
 import moment from "moment";
 
+import {compare} from "./FormatHelper";
+
 /**
  * Ensures that the incoming data object has the correct data types
  *
@@ -22,23 +24,6 @@ export const AnalyseInputData = (input) => {
 		return ["There's an issue with the data you input. Please make sure it's in the correct input format, detailed below."]
 	}
 	return outcome;
-}
-
-/**
- * Useful function for sorting values within an array
- *
- * @param a
- * @param b
- * @returns {number}
- */
-function compare( a, b ) {
-	if ( a.atDate < b.atDate ){
-		return -1;
-	}
-	if ( a.atDate > b.atDate ){
-		return 1;
-	}
-	return 0;
 }
 
 /**
@@ -74,7 +59,7 @@ export const AnalyseKidneyDiseaseData = (input) => {
  * @param eGFR - The eGFR classification to be determined
  * @returns {string} - The classification
  */
-function calculateKidneyDiseaseClassification(eGFR) {
+export const calculateKidneyDiseaseClassification = (eGFR) => {
 	if(eGFR >= 90) {
 		return "Normal";
 	} else if (89 >= eGFR && eGFR >= 60) {

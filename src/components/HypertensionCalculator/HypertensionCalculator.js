@@ -2,7 +2,7 @@
 import BaseCalculator from '../BaseCalculator/BaseCalculator';
 
 //helpers
-import {JSONFormatter} from '../../helpers/Formatter';
+import {JSONFormatter} from '../../helpers/FormatHelper';
 import {AnalyseInputData, AnalyseHypertensionData} from '../../helpers/HyperTensionHelper'
 
 class HypertensionCalculator extends BaseCalculator {
@@ -23,6 +23,8 @@ class HypertensionCalculator extends BaseCalculator {
 	handleSubmit(event) {
 		event.preventDefault();
 
+		console.log(this.state.userInput);
+
 		this.setState({
 			displayData: false,
 			inputData: [],
@@ -42,7 +44,7 @@ class HypertensionCalculator extends BaseCalculator {
 			if(this.state.errorMessages.length === 0){
 				this.setState({
 					displayData: true
-				})
+				});
 			}
 		});
 	}

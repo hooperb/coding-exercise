@@ -2,7 +2,7 @@
 import BaseCalculator from '../BaseCalculator/BaseCalculator';
 
 //helpers
-import {JSONFormatter} from '../../helpers/Formatter';
+import {JSONFormatter} from '../../helpers/FormatHelper';
 import {AnalyseInputData, AnalyseKidneyDiseaseData} from "../../helpers/KidneyDiseaseHelper";
 
 class KidneyDiseaseCalculator extends BaseCalculator {

@@ -34,7 +34,7 @@ class DisplayTable extends React.Component {
 				<TableContainer component={Paper}>
 					<Table className="table" aria-label="simple table">
 						<TableHead>
-							<TableRow key={5+5}>
+							<TableRow key={0}>
 								{ this.tableColumns.map((column, index) => (
 									<TableCell key={index.toString()}>{column.headerName}</TableCell>
 								))}

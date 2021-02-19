@@ -1,6 +1,6 @@
 import _ from 'lodash';
-
 import moment from "moment";
+import {compare} from "./FormatHelper";
 
 /**
  * Validates the input data for a HyperTension classification
@@ -13,20 +13,17 @@ import moment from "moment";
  *
  */
 export const AnalyseInputData = (input) => {
-	var outcome = [];
+	let outcome = [];
 	try {
 		input.forEach((current) => {
-
-			// Check SysBP is a number
-			if(!_.isNumber(current.SysBP)) {
+			// Check SysBP is an integer
+			if(!_.isInteger(current.SysBP)) {
 				outcome.push(current.SysBP + " is not a valid SysBP reading!");
 			}
-
-			// Check DiaBP is a Number
-			if(!_.isNumber(current.DiaBP)) {
+			// Check DiaBP is an integer
+			if(!_.isInteger(current.DiaBP)) {
 				outcome.push(current.DiaBP + " is not a valid DiaBP reading!");
 			}
-
 			// Check date is valid and in the form YYYY/MM/DD
 			if(!moment(current.atDate, 'YYYY/MM/DD',true).isValid()){
 				outcome.push(current.atDate + " is not a valid Date!");
@@ -46,6 +43,8 @@ export const AnalyseInputData = (input) => {
  */
 export const AnalyseHypertensionData = (input) => {
 	try {
+		input.sort(compare);
+
 		input.forEach((n) => {
 			n.classification = calculateHyperTensionClassification(n.SysBP, n.DiaBP);
 		});
@@ -63,7 +62,7 @@ export const AnalyseHypertensionData = (input) => {
  *
  * @returns {string} - Returns the HyperTension classification for the given SysBP and DiaBP fields
  */
-function calculateHyperTensionClassification(SysBP, DiaBP) {
+export const calculateHyperTensionClassification = (SysBP, DiaBP) => {
 	if((SysBP >= 180) && (DiaBP >= 120)) {
 		return "Stage 3";
 	} else if (((180 > SysBP) && (SysBP >= 160)) && ((110 > DiaBP) && (DiaBP >= 100))) {
@@ -74,3 +73,5 @@ function calculateHyperTensionClassification(SysBP, DiaBP) {
 		return "No Hypertension";
 	}
 }
+
+//export const calculateHyperTensionClassification
