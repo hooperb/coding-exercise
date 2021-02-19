@@ -4,7 +4,7 @@ Prepared by Ben Hooper
 [Demo here](https://hooperb.github.io/coding-exercise/)
 
 # System Requirements and Installation
-npm (v6.14.10 used for development)
+npm (~v6.14.10)
 
 Once you have cloned the repository, run:
 
