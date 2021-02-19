@@ -3,7 +3,7 @@ import BaseCalculator from '../BaseCalculator/BaseCalculator';
 
 //helpers
 import {JSONFormatter} from '../../helpers/FormatHelper';
-import {AnalyseInputData, AnalyseHypertensionData} from '../../helpers/HyperTensionHelper'
+import {AnalyseInputData, AnalyseHypertensionData} from '../../helpers/HypertensionHelper'
 
 class HypertensionCalculator extends BaseCalculator {
 
@@ -22,8 +22,6 @@ class HypertensionCalculator extends BaseCalculator {
 
 	handleSubmit(event) {
 		event.preventDefault();
-
-		console.log(this.state.userInput);
 
 		this.setState({
 			displayData: false,

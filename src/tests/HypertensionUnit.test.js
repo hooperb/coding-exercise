@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 
-import {calculateHyperTensionClassification} from '../helpers/HyperTensionHelper'
+import {calculateHypertensionClassification} from '../helpers/HypertensionHelper'
 
 const hypertensionClassificationTests = [
 	// Stage 3 Boundaries
@@ -26,6 +26,6 @@ const hypertensionClassificationTests = [
 ];
 
 test.each(hypertensionClassificationTests)('Hypertension Classification', ({ input, expectedOutput }) => {
-	const classification = calculateHyperTensionClassification(input[0], input[1]);
+	const classification = calculateHypertensionClassification(input[0], input[1]);
 	expect(classification).toEqual(expectedOutput);
 });

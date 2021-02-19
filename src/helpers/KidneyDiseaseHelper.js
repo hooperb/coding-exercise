@@ -41,7 +41,7 @@ export const AnalyseKidneyDiseaseData = (input) => {
 		let last = 0;
 
 		input.forEach((n) => {
-			(last - n.eGFR) > (last * 0.2) ? n.dropflag = '20% Drop' : n.dropflag = '';
+			(last - n.eGFR) > (last * 0.2) ? n.dropflag = '20%+ Drop Detected since previous test' : n.dropflag = '';
 			n.classification = calculateKidneyDiseaseClassification(n.eGFR);
 
 			last = n.eGFR;

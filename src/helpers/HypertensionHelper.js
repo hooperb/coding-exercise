@@ -3,7 +3,7 @@ import moment from "moment";
 import {compare} from "./FormatHelper";
 
 /**
- * Validates the input data for a HyperTension classification
+ * Validates the input data for a Hypertension classification
  *
  * Notes: SysBP & and DiaBP both must be integers (numbers), and atDate must a be valid date
  *
@@ -46,7 +46,7 @@ export const AnalyseHypertensionData = (input) => {
 		input.sort(compare);
 
 		input.forEach((n) => {
-			n.classification = calculateHyperTensionClassification(n.SysBP, n.DiaBP);
+			n.classification = calculateHypertensionClassification(n.SysBP, n.DiaBP);
 		});
 		return input
 	} catch (err) {
@@ -60,9 +60,9 @@ export const AnalyseHypertensionData = (input) => {
  * @param SysBP - The SysBP for the current record
  * @param DiaBP - The SysBP for the current record
  *
- * @returns {string} - Returns the HyperTension classification for the given SysBP and DiaBP fields
+ * @returns {string} - Returns the Hypertension classification for the given SysBP and DiaBP fields
  */
-export const calculateHyperTensionClassification = (SysBP, DiaBP) => {
+export const calculateHypertensionClassification = (SysBP, DiaBP) => {
 	if((SysBP >= 180) && (DiaBP >= 120)) {
 		return "Stage 3";
 	} else if (((180 > SysBP) && (SysBP >= 160)) && ((110 > DiaBP) && (DiaBP >= 100))) {
@@ -73,5 +73,3 @@ export const calculateHyperTensionClassification = (SysBP, DiaBP) => {
 		return "No Hypertension";
 	}
 }
-
-//export const calculateHyperTensionClassification

@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {JSONFormatter} from "../../helpers/FormatHelper";
-import {AnalyseHypertensionData, AnalyseInputData} from "../../helpers/HyperTensionHelper";
+import {AnalyseHypertensionData, AnalyseInputData} from "../../helpers/HypertensionHelper";
 
 // As most of the functionality for the Hypertension Calculator is a combination of
 // helper functions, this class primarily tests them using the same data structures and input formats
@@ -12,7 +12,7 @@ const inputFormatTests = [
 	{input: '[{SysBP:120, atDate:\'yesterday\'}, {SysBP:110, DiaBP:105, atDate:2019/04/21}]', expectedOutput: false},
 ];
 
-test.each(inputFormatTests)('Incorrect Format Tests', ({ input, expectedOutput }) => {
+test.each(inputFormatTests)('Hypertension Incorrect Format Tests', ({ input, expectedOutput }) => {
 	const convertedInput = JSONFormatter(input, ['SysBP', 'DiaBP', 'atDate']);
 	expect(convertedInput).toEqual(expectedOutput);
 });
@@ -24,7 +24,7 @@ const incorrectDataTypesTests = [
 	{input: '[{SysBP: 90, DiaBP:110, atDate:\'yesterday\'}]', expectedOutput: ['yesterday is not a valid Date!']},
 ];
 
-test.each(incorrectDataTypesTests)('Incorrect Data Types Tests', ({ input, expectedOutput }) => {
+test.each(incorrectDataTypesTests)('Hypertension Incorrect Data Types Tests', ({ input, expectedOutput }) => {
 	const convertedInput = JSONFormatter(input, ['SysBP', 'DiaBP', 'atDate']);
 	let errorMessages = AnalyseInputData(convertedInput);
 	expect(errorMessages).toEqual(expectedOutput);
@@ -43,9 +43,8 @@ const correctDataTests = [
 	},
 ];
 
-test.each(correctDataTests)('Correct Data Tests', ({input, expectedOutput}) => {
+test.each(correctDataTests)('Hypertension Correct Data Tests', ({input, expectedOutput}) => {
 	const convertedInput = JSONFormatter(input, ['SysBP', 'DiaBP', 'atDate']);
 	const processedData = AnalyseHypertensionData(convertedInput);
-
 	expect(processedData).toEqual(expectedOutput);
 });

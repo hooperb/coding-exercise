@@ -53,7 +53,7 @@ class KidneyDiseaseCalculator extends BaseCalculator {
 		{field: 'eGFR', headerName: 'eGFR', width: 70},
 		{field: 'atDate', headerName: 'Date', width: 70},
 		{field: 'classification', headerName: 'Classification', width: 70},
-		{field: 'dropflag', headerName: 'Drop Detected', width: 70},
+		{field: 'dropflag', headerName: 'Large Drop Detected', width: 70},
 	];
 
 	render() {
