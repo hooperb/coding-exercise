@@ -36,13 +36,13 @@ const correctDataTests = [
 	{input: '[{eGFR: 91, atDate: \'2020/04/05\' },{eGFR: 35, atDate: \'2020/08/01\' }]',
 		expectedOutput: [
 			{eGFR: 91, atDate: "2020/04/05", dropflag: "", classification: "Normal"},
-			{eGFR: 35, atDate: "2020/08/01", dropflag: "20%+ Drop Detected since previous test", classification: "Moderate to Severe"}
+			{eGFR: 35, atDate: "2020/08/01", dropflag: "61.54% drop detected since previous test", classification: "Moderate to Severe"}
 		]
 	},
 	{input: '[{eGFR: 86, atDate: \'2020/04/05\' },{eGFR: 67.0, atDate: \'2020/08/01\' }, {eGFR: 66, atDate: \'2020/09/01\' }]',
 		expectedOutput: [
 			{eGFR: 86, atDate: "2020/04/05", dropflag: "", classification: "Mildly Decreased"},
-			{eGFR: 67, atDate: "2020/08/01", dropflag: "20%+ Drop Detected since previous test", classification: "Mildly Decreased"},
+			{eGFR: 67, atDate: "2020/08/01", dropflag: "22.09% drop detected since previous test", classification: "Mildly Decreased"},
 			{eGFR: 66, atDate: "2020/09/01", dropflag: "", classification: "Mildly Decreased"}
 		]
 	},

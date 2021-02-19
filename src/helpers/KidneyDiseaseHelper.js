@@ -41,7 +41,8 @@ export const AnalyseKidneyDiseaseData = (input) => {
 		let last = 0;
 
 		input.forEach((n) => {
-			(last - n.eGFR) > (last * 0.2) ? n.dropflag = '20%+ Drop Detected since previous test' : n.dropflag = '';
+			let percent = getPercentageChange(last, n.eGFR);
+			percent >= 20 ? n.dropflag = percent.toFixed(2) + '% drop detected since previous test' : n.dropflag = '';
 			n.classification = calculateKidneyDiseaseClassification(n.eGFR);
 
 			last = n.eGFR;
@@ -51,6 +52,19 @@ export const AnalyseKidneyDiseaseData = (input) => {
 	} catch (err) {
 		return false;
 	}
+}
+
+/**
+ * Calculates in percent, the change between 2 numbers.
+ * e.g from 1000 to 500 = 50%
+ *
+ * @param oldNumber The initial value
+ * @param newNumber The value that changed
+ */
+function getPercentageChange(oldNumber, newNumber){
+	var decreaseValue = oldNumber - newNumber;
+
+	return (decreaseValue / oldNumber) * 100;
 }
 
 /**

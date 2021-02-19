@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import {calculateHypertensionClassification} from '../helpers/HypertensionHelper'
 
 const hypertensionClassificationTests = [
-	// Stage 3 Boundaries
+	// Stage 3 Boundaries (
 	{input: [180, 120], expectedOutput: 'Stage 3'},
 	{input: [181, 121], expectedOutput: 'Stage 3'},
 	{input: [200, 140], expectedOutput: 'Stage 3'},
