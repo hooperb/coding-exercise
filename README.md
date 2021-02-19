@@ -1,7 +1,7 @@
 # Hypertension and Kidney Disease Calculator
 Prepared by Ben Hooper
 
-Demo here
+[Demo here](https://hooperb.github.io/coding-exercise/)
 
 # System Requirements and Installation
 Node (npm on CLI)
